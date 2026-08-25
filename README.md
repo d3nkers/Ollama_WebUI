@@ -142,7 +142,7 @@ Voor modellen die Ollama's thinking/reasoning-output ondersteunen:
 
 Of een model vision ondersteunt wordt momenteel niet vooraf door de UI bepaald; een incompatibel model retourneert een Ollama-fout.
 
-### Bestanden en URL-context
+### Bestanden en URL context
 
 Een gebruiker kan:
 
@@ -162,7 +162,7 @@ Het securitymodel gaat nadrukkelijk niet uit van veilige blootstelling aan het p
 
 ### Authenticatie
 
-Alle FastAPI-routes vallen onder HTTP Basic Auth.
+Alle FastAPI routes vallen onder HTTP Basic Auth.
 
 Configuratie:
 
@@ -244,7 +244,7 @@ Externe afbeeldingen in model-Markdown worden geblokkeerd:
 
 Hiermee kan modeloutput niet eenvoudig een externe tracking-image laten ophalen door de browser.
 
-### SSRF-bescherming bij URL-fetching
+### SSRF-bescherming bij URL fetching
 
 Een URL-fetchfunctie op een LAN kan toegang geven tot interne diensten. Daarom:
 
@@ -263,7 +263,7 @@ Een URL-fetchfunctie op een LAN kan toegang geven tot interne diensten. Daarom:
 - geldt een globale rate limit van 10 URL-fetches per minuut;
 - worden scripts, styles, navigatie en andere niet-relevante HTML-elementen verwijderd.
 
-### Bewust resterend SSRF-risico: DNS rebinding
+### Bewust resterend SSRF risico: DNS rebinding
 
 DNS-validatie en de daadwerkelijke TCP-connectie zijn nog twee afzonderlijke stappen.
 
@@ -330,7 +330,7 @@ Eenvoudige schemawijzigingen worden bij het starten automatisch gemigreerd.
 
 - Python 3.12 of nieuwer
 - Ollama
-- minimaal één lokaal Ollama-model
+- Minimaal één lokaal Ollama model
 
 Controleer eerst of Ollama werkt:
 
@@ -348,7 +348,7 @@ ollama serve
 
 ```bash
 git clone https://github.com/d3nkers/Ollama_WebUI
-cd ollama_webui
+cd Ollama_WebUI
 
 uv sync
 ```
@@ -392,7 +392,7 @@ OLLAMA_UI_PASS='vervang-dit-door-een-sterk-wachtwoord'
 # OLLAMA_UI_SSL_HOSTS=hostname.local
 ```
 
-Bestaande shell- of systemd-environmentvariables hebben voorrang boven `.env`.
+Bestaande shell of systemd-environmentvariables hebben voorrang boven `.env`.
 
 ---
 
@@ -508,21 +508,21 @@ SQLite past bij:
 
 ### Geen gebruikersaccounts/JWT/OAuth
 
-Voor een klein vertrouwd LAN is één Basic Auth-laag bewust eenvoudiger gehouden.
+Voor een klein vertrouwd LAN is één Basic Auth laag bewust eenvoudiger gehouden.
 
-Bij multi-user of internet-facing gebruik moet authenticatie opnieuw worden ontworpen.
+Bij multi-user of internet facing gebruik moet authenticatie opnieuw worden ontworpen.
 
 ### Geen vector database/RAG
 
 RAG is geen vereiste voor de primaire functie van het project.
 
-De applicatie ondersteunt wel expliciete tekst- en URL-context zonder daarvoor extra infrastructuur toe te voegen.
+De applicatie ondersteunt wel expliciete tekst en URL context zonder daarvoor extra infrastructuur toe te voegen.
 
 ### Geen Docker-verplichting
 
 De applicatie is direct als Python-project te draaien.
 
-Containerisatie kan later worden toegevoegd, maar is niet noodzakelijk voor lokaal gebruik.
+Containerisatie kan later worden toegevoegd maar is niet noodzakelijk voor lokaal gebruik.
 
 ---
 
