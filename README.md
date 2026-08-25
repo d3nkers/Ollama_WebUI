@@ -1,3 +1,5 @@
+[![Tests](https://github.com/d3nkers/Ollama_WebUI/actions/workflows/tests.yml/badge.svg)](https://github.com/d3nkers/Ollama_WebUI/actions/workflows/tests.yml)
+
 # Ollama WebUI
 
 Een lokale webinterface voor [Ollama](https://ollama.com/) met persistente chatgeschiedenis, streaming responses, per-gesprek modelinstellingen, multimodale input en een expliciet securitymodel voor gebruik op een vertrouwd lokaal netwerk.
