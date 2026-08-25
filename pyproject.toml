@@ -1,8 +1,8 @@
 [project]
 name = "ollama-webui"
 version = "0.1.0"
-description = "Lokale web-UI voor Ollama-modellen, met chatgeschiedenis, streaming responses en HTTPS"
-readme = "project-instructie.md"
+description = "Lokale web-UI voor Ollama-modellen met chatgeschiedenis, streaming responses en HTTPS"
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115",
