@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+static/vendor/* linguist-vendored
+
+uv.lock linguist-generated=true

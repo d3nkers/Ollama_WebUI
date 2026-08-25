@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ollama · lan-ui</title>
+<link rel="stylesheet" href="/vendor/hljs-theme.css">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<div id="sidebar">
+  <div id="sidebar-head">
+    <h1>ollama · lan-ui</h1>
+    <div id="status"><span class="dot" id="status-dot"></span><span id="status-text">verbinden…</span></div>
+    <select id="model-select" disabled><option>modellen laden…</option></select>
+
+    <details id="settings">
+      <summary>Instellingen voor nieuw gesprek</summary>
+      <div class="settings-body">
+        <div>
+          <label class="settings-label" for="system-prompt">Systeemprompt</label>
+          <textarea id="system-prompt" class="settings-field" rows="3" placeholder="bijv. 'Antwoord altijd in het Nederlands, kort en to-the-point.'"></textarea>
+        </div>
+        <div>
+          <label class="settings-label">Antwoordstijl</label>
+          <div class="temp-presets" id="temp-presets"></div>
+          <div class="temp-custom-note" id="temp-custom-note"></div>
+        </div>
+        <div>
+          <label class="settings-label" for="num-ctx">Context (tokens)</label>
+          <input id="num-ctx" class="settings-field" type="number" min="256" step="512" placeholder="model-default">
+        </div>
+      </div>
+    </details>
+  </div>
+  <button id="new-chat">+ Nieuw gesprek</button>
+  <div id="conv-list"></div>
+</div>
+
+<div id="main">
+  <div id="messages">
+    <div id="empty-state">Selecteer een gesprek of start een nieuwe.</div>
+  </div>
+  <div id="composer">
+    <div class="slash-menu hidden" id="slash-menu"></div>
+    <div class="url-popover hidden" id="url-popover">
+      <input id="url-input" type="text" placeholder="https://…">
+      <button id="url-submit">Ophalen</button>
+      <div class="url-error" id="url-error"></div>
+    </div>
+    <div class="image-strip" id="image-strip"></div>
+    <div class="file-strip" id="file-strip"></div>
+    <div id="composer-inner">
+      <button id="attach-btn" type="button" title="Afbeelding bijvoegen">📎</button>
+      <input id="file-input" type="file" accept="image/*" multiple class="hidden-input">
+      <button id="text-attach-btn" type="button" title="Tekstbestand bijvoegen">📄</button>
+      <input id="text-file-input" type="file" accept=".txt,.md,.log,.py,.js,.ts,.json,.yaml,.yml,.csv,.conf,.cfg,.ini,.sh,.html,.css,.xml,.sql" multiple class="hidden-input">
+      <button id="url-attach-btn" type="button" title="URL bijvoegen">🔗</button>
+      <textarea id="input" rows="1" placeholder="Typ een bericht… ( / voor snelkoppelingen )"></textarea>
+      <button id="send">Stuur</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div id="hint">Enter = versturen · Shift+Enter = nieuwe regel · / = snelkoppelingen</div>
+  </div>
+</div>
+
+<div id="code-panel">
+  <div id="code-panel-header">
+    <span id="code-panel-title"></span>
+    <button id="code-panel-copy">kopieer</button>
+    <button id="code-panel-download">download</button>
+    <button id="code-panel-close">✕</button>
+  </div>
+  <pre id="code-panel-body"><code id="code-panel-content"></code></pre>
+</div>
+
+<script src="/vendor/marked.min.js"></script>
+<script src="/vendor/purify.min.js"></script>
+<script src="/vendor/highlight.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

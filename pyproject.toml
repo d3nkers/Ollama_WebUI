@@ -1,0 +1,28 @@
+[project]
+name = "ollama-webui"
+version = "0.1.0"
+description = "Lokale web-UI voor Ollama-modellen, met chatgeschiedenis, streaming responses en HTTPS"
+readme = "project-instructie.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "cryptography>=42.0",
+    "python-dotenv>=1.0",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
