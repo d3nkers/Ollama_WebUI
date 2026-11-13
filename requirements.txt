@@ -51,7 +51,7 @@ python-dotenv==1.2.3
     #   uvicorn
 pyyaml==6.0.3
     # via uvicorn
-soupsieve==2.9.2
+soupsieve==4.0
     # via beautifulsoup4
 starlette==1.6.0
     # via fastapi
